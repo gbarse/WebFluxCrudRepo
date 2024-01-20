@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.example.Crud.PersonServiceTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2024-01-20T21:39:55" hostname="GBARSE" time="0.045">
+  <properties/>
+  <testcase name="updatePerson()" classname="com.example.Crud.PersonServiceTest" time="0.024"/>
+  <testcase name="getAllPeople()" classname="com.example.Crud.PersonServiceTest" time="0.004"/>
+  <testcase name="getPersonById()" classname="com.example.Crud.PersonServiceTest" time="0.004"/>
+  <testcase name="createPerson()" classname="com.example.Crud.PersonServiceTest" time="0.003"/>
+  <testcase name="deletePersonShouldMarkPersonAsDeleted()" classname="com.example.Crud.PersonServiceTest" time="0.003"/>
+  <system-out><![CDATA[2024-01-21T01:39:55.675+04:00  INFO 7848 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.example.Crud.PersonServiceTest]: PersonServiceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-01-21T01:39:55.677+04:00  INFO 7848 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.example.Crud.CrudApplication for test class com.example.Crud.PersonServiceTest
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
