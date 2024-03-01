@@ -3,13 +3,15 @@ package com.example.Crud.entity;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.annotation.Version;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.LocalDateTime;
+import java.util.Objects;
 import java.util.UUID;
 
 
-@Document
+@Document(collection = "person")
 public class PersonEntity {
     @Id
     private UUID id;
@@ -20,6 +22,16 @@ public class PersonEntity {
     @LastModifiedDate
     private LocalDateTime dateUpdated;
     private LocalDateTime dateDeleted;
+    @Version
+    private Integer version;
+
+    public Integer getVersion() {
+        return version;
+    }
+
+    public void setVersion(Integer version) {
+        this.version = version;
+    }
 
     public PersonEntity() {
     }
@@ -79,5 +91,18 @@ public class PersonEntity {
 
     public void setDateDeleted(LocalDateTime dateDeleted) {
         this.dateDeleted = dateDeleted;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        PersonEntity that = (PersonEntity) o;
+        return Objects.equals(id, that.id) && Objects.equals(firstName, that.firstName) && Objects.equals(lastName, that.lastName) && Objects.equals(dateCreated, that.dateCreated) && Objects.equals(dateUpdated, that.dateUpdated) && Objects.equals(dateDeleted, that.dateDeleted);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, firstName, lastName, dateCreated, dateUpdated, dateDeleted);
     }
 }
