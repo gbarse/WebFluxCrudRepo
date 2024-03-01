@@ -1,5 +1,7 @@
 package com.example.Crud.dto;
 
+import org.springframework.data.annotation.Version;
+
 import java.util.UUID;
 
 public class UpdatePersonDto {
@@ -8,7 +10,18 @@ public class UpdatePersonDto {
     private String firstName;
     private String lastName;
 
+    @Version
+    private Integer version;
+
     public UpdatePersonDto() {
+    }
+
+    public Integer getVersion() {
+        return version;
+    }
+
+    public void setVersion(Integer version) {
+        this.version = version;
     }
 
     public UUID getId() {
